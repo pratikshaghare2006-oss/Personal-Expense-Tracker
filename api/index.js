@@ -33,14 +33,14 @@ app.get("/api/health", async (req, res) => {
 
     res.json({
       ok: true,
-      databaseTime: result.rows[0].database_time
+      databaseTime: result.rows[0].database_time,
     });
   } catch (error) {
     console.error("Health check database error:", error);
 
     res.status(500).json({
       ok: false,
-      error: "Database connection failed"
+      error: "Database connection failed",
     });
   }
 });
@@ -78,7 +78,13 @@ app.get("*", (req, res) => {
     return res.status(404).json({ error: "API route not found" });
   res.sendFile(path.join(__dirname, "..", "index.html"));
 });
-const port = process.env.PORT || 3000;
-app.listen(port, () =>
-  console.log(`Expense Tracker running on http://localhost:${port}`),
-);
+
+if (require.main === module) {
+  const port = process.env.PORT || 3000;
+
+  app.listen(port, () => {
+    console.log(`Expense Tracker running on http://localhost:${port}`);
+  });
+}
+
+module.exports = app;
