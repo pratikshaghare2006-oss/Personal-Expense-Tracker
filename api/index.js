@@ -73,11 +73,6 @@ app.get("/api/admin/categories", admin.categories);
 app.get("/api/admin/messages", admin.messages);
 app.put("/api/admin/messages/:id/read", admin.markMessage);
 app.get("/api/admin/reports", adminReport.report);
-app.get("*", (req, res) => {
-  if (req.path.startsWith("/api/"))
-    return res.status(404).json({ error: "API route not found" });
-  res.sendFile(path.join(__dirname, "..", "index.html"));
-});
 
 if (require.main === module) {
   const port = process.env.PORT || 3000;
