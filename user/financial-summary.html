@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Personal Expense Tracker" />
+    <title>Financial Summary</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/user.css" />
+  </head>
+  <body class="user-area">
+    <aside class="sidebar">
+      <a class="brand" href="/user/dashboard.html" style="color: white"
+        ><span class="brand-mark">₹</span> ExpenseTrack</a
+      >
+      <h3>User Menu</h3>
+      <a class="side-link" href="/user/dashboard.html">▦ Dashboard</a
+      ><a class="side-link" href="/user/add-expense.html">− Add Expense</a
+      ><a class="side-link" href="/user/add-income.html">+ Add Income</a
+      ><a class="side-link" href="/user/transactions.html">↔ Transactions</a
+      ><a class="side-link" href="/user/categories.html">▤ Categories</a
+      ><a class="side-link" href="/user/budgets.html">◷ Budgets</a
+      ><a class="side-link" href="/user/reports.html">▥ Reports</a
+      ><a class="side-link" href="/user/financial-summary.html">₹ Summary</a
+      ><a class="side-link" href="/user/profile.html">⚙ Profile</a
+      ><a
+        class="side-link"
+        href="#"
+        onclick="
+          logout();
+          return false;
+        "
+        >↪ Logout</a
+      >
+    </aside>
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <h1>Financial Summary</h1>
+          <p class="muted">Welcome, <span data-user-name>User</span></p>
+        </div>
+        <span class="user-badge">User</span>
+      </div>
+      <div class="stats-grid">
+        <div class="card stat-card stat-blue">
+          <span class="stat-label">Current Balance</span>
+          <div id="balanceTotal" class="stat-value">₹0.00</div>
+        </div>
+        <div class="card stat-card stat-green">
+          <span class="stat-label">Income</span>
+          <div id="incomeTotal" class="stat-value">₹0.00</div>
+        </div>
+        <div class="card stat-card stat-red">
+          <span class="stat-label">Expenses</span>
+          <div id="expenseTotal" class="stat-value">₹0.00</div>
+        </div>
+      </div>
+      <div class="card" style="margin-top: 20px">
+        <h3>Summary</h3>
+        <p class="muted">
+          Your balance is calculated as total income minus total expenses across
+          all recorded transactions.
+        </p>
+      </div>
+    </main>
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/user.js"></script>
+  </body>
+</html>

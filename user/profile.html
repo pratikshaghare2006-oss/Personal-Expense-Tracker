@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Personal Expense Tracker" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/user.css" />
+  </head>
+  <body class="user-area">
+    <aside class="sidebar">
+      <a class="brand" href="/user/dashboard.html" style="color: white"
+        ><span class="brand-mark">₹</span> ExpenseTrack</a
+      >
+      <h3>User Menu</h3>
+      <a class="side-link" href="/user/dashboard.html">▦ Dashboard</a
+      ><a class="side-link" href="/user/add-expense.html">− Add Expense</a
+      ><a class="side-link" href="/user/add-income.html">+ Add Income</a
+      ><a class="side-link" href="/user/transactions.html">↔ Transactions</a
+      ><a class="side-link" href="/user/categories.html">▤ Categories</a
+      ><a class="side-link" href="/user/budgets.html">◷ Budgets</a
+      ><a class="side-link" href="/user/reports.html">▥ Reports</a
+      ><a class="side-link" href="/user/financial-summary.html">₹ Summary</a
+      ><a class="side-link" href="/user/profile.html">⚙ Profile</a
+      ><a
+        class="side-link"
+        href="#"
+        onclick="
+          logout();
+          return false;
+        "
+        >↪ Logout</a
+      >
+    </aside>
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <h1>Profile</h1>
+          <p class="muted">Welcome, <span data-user-name>User</span></p>
+        </div>
+        <span class="user-badge">User</span>
+      </div>
+      <div class="page-grid">
+        <div class="card">
+          <h3>Personal Details</h3>
+          <div id="msg" hidden></div>
+          <form id="profileForm">
+            <div class="form-group">
+              <label>Name</label><input name="name" required />
+            </div>
+            <div class="form-group">
+              <label>Email</label><input name="email" disabled />
+            </div>
+            <button class="btn btn-primary">Update Profile</button>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Security</h3>
+          <form onsubmit="changePassword(event)">
+            <div class="form-group">
+              <label>Current Password</label
+              ><input id="currentPassword" type="password" required />
+            </div>
+            <div class="form-group">
+              <label>New Password</label
+              ><input id="newPassword" type="password" minlength="6" required />
+            </div>
+            <button class="btn btn-outline">Change Password</button>
+          </form>
+        </div>
+      </div>
+      <script>
+        async function changePassword(e) {
+          e.preventDefault();
+          try {
+            await api("/profile/password", {
+              method: "PUT",
+              body: JSON.stringify({
+                currentPassword: currentPassword.value,
+                newPassword: newPassword.value,
+              }),
+            });
+            alert("Password updated successfully");
+            e.target.reset();
+          } catch (x) {
+            alert(x.message);
+          }
+        }
+      </script>
+    </main>
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/user.js"></script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Personal Expense Tracker" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/admin.css" />
+  </head>
+  <body class="admin-area">
+    <aside class="sidebar admin-sidebar">
+      <a class="brand" href="/admin/dashboard.html" style="color: white"
+        ><span class="brand-mark">₹</span> ExpenseTrack</a
+      >
+      <h3>Admin Menu</h3>
+      <a class="side-link" href="/admin/dashboard.html">▦ Dashboard</a
+      ><a class="side-link" href="/admin/users.html">♙ Users</a
+      ><a class="side-link" href="/admin/transactions.html">↔ Transactions</a
+      ><a class="side-link" href="/admin/categories.html">▤ Categories</a
+      ><a class="side-link" href="/admin/reports.html">▥ Reports</a
+      ><a class="side-link" href="/admin/messages.html">✉ Messages</a
+      ><a class="side-link" href="/admin/profile.html">⚙ Profile</a
+      ><a
+        class="side-link"
+        href="#"
+        onclick="
+          logout();
+          return false;
+        ">
+        ↪ Logout</a>
+      
+    </aside>
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <h1 class="admin-title">Dashboard</h1>
+          <p class="muted">Administration panel</p>
+        </div>
+        <span class="user-badge">Admin</span>
+      </div>
+      <div class="stats-grid">
+        <div class="card stat-card admin-accent">
+          <span class="stat-label">Users</span>
+          <div id="users" class="stat-value">0</div>
+        </div>
+        <div class="card stat-card admin-accent">
+          <span class="stat-label">Transactions</span>
+          <div id="transactions" class="stat-value">0</div>
+        </div>
+        <div class="card stat-card stat-red">
+          <span class="stat-label">Expenses</span>
+          <div id="expenses" class="stat-value">₹0</div>
+        </div>
+        <div class="card stat-card stat-green">
+          <span class="stat-label">Income</span>
+          <div id="income" class="stat-value">₹0</div>
+        </div>
+        <div class="card stat-card admin-accent">
+          <span class="stat-label">Unread Messages</span>
+          <div id="messages" class="stat-value">0</div>
+        </div>
+      </div>
+      <div class="card" style="margin-top: 20px">
+        <h3>Admin overview</h3>
+        <p class="muted">
+          Use the sidebar to inspect users, transactions, categories, reports
+          and contact messages.
+        </p>
+      </div>
+    </main>
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/admin.js"></script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Personal Expense Tracker" />
+    <title>Transactions</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/user.css" />
+  </head>
+  <body class="user-area">
+    <aside class="sidebar">
+      <a class="brand" href="/user/dashboard.html" style="color: white"
+        ><span class="brand-mark">₹</span> ExpenseTrack</a
+      >
+      <h3>User Menu</h3>
+      <a class="side-link" href="/user/dashboard.html">▦ Dashboard</a
+      ><a class="side-link" href="/user/add-expense.html">− Add Expense</a
+      ><a class="side-link" href="/user/add-income.html">+ Add Income</a
+      ><a class="side-link" href="/user/transactions.html">↔ Transactions</a
+      ><a class="side-link" href="/user/categories.html">▤ Categories</a
+      ><a class="side-link" href="/user/budgets.html">◷ Budgets</a
+      ><a class="side-link" href="/user/reports.html">▥ Reports</a
+      ><a class="side-link" href="/user/financial-summary.html">₹ Summary</a
+      ><a class="side-link" href="/user/profile.html">⚙ Profile</a
+      ><a
+        class="side-link"
+        href="#"
+        onclick="
+          logout();
+          return false;
+        "
+        >↪ Logout</a
+      >
+    </aside>
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <h1>Transactions</h1>
+          <p class="muted">Welcome, <span data-user-name>User</span></p>
+        </div>
+        <span class="user-badge">User</span>
+      </div>
+      <div class="card">
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="transactionBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/user.js"></script>
+  </body>
+</html>

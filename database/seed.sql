@@ -1,0 +1,2 @@
+-- Optional starter categories are created automatically when a user registers.
+-- Use this file only for your own seed data.

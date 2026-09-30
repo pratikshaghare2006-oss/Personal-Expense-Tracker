@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Personal Expense Tracker" />
+    <title>Categories</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/user.css" />
+  </head>
+  <body class="user-area">
+    <aside class="sidebar">
+      <a class="brand" href="/user/dashboard.html" style="color: white"
+        ><span class="brand-mark">₹</span> ExpenseTrack</a
+      >
+      <h3>User Menu</h3>
+      <a class="side-link" href="/user/dashboard.html">▦ Dashboard</a
+      ><a class="side-link" href="/user/add-expense.html">− Add Expense</a
+      ><a class="side-link" href="/user/add-income.html">+ Add Income</a
+      ><a class="side-link" href="/user/transactions.html">↔ Transactions</a
+      ><a class="side-link" href="/user/categories.html">▤ Categories</a
+      ><a class="side-link" href="/user/budgets.html">◷ Budgets</a
+      ><a class="side-link" href="/user/reports.html">▥ Reports</a
+      ><a class="side-link" href="/user/financial-summary.html">₹ Summary</a
+      ><a class="side-link" href="/user/profile.html">⚙ Profile</a
+      ><a
+        class="side-link"
+        href="#"
+        onclick="
+          logout();
+          return false;
+        "
+        >↪ Logout</a
+      >
+    </aside>
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <h1>Categories</h1>
+          <p class="muted">Welcome, <span data-user-name>User</span></p>
+        </div>
+        <span class="user-badge">User</span>
+      </div>
+      <div class="page-grid">
+        <div class="card">
+          <h3>Create Category</h3>
+          <div id="msg" hidden></div>
+          <form id="categoryForm">
+            <div class="form-group">
+              <label>Name</label><input name="name" required />
+            </div>
+            <div class="form-group">
+              <label>Type</label
+              ><select name="type">
+                <option value="expense">Expense</option>
+                <option value="income">Income</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Color</label
+              ><input name="color" type="color" value="#2563eb" />
+            </div>
+            <button class="btn btn-primary">Create</button>
+          </form>
+        </div>
+        <div>
+          <h3>Your Categories</h3>
+          <div id="categoryList" style="display: grid; gap: 10px"></div>
+        </div>
+      </div>
+    </main>
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/user.js"></script>
+  </body>
+</html>

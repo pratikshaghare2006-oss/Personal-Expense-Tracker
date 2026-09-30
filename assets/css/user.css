@@ -1,0 +1,45 @@
+body.user-area {
+  background: whitesmoke;
+}
+.user-badge {
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-weight: 700;
+}
+.quick-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+.income {
+  color: #15803d;
+}
+.expense {
+  color: #b91c1c;
+}
+.user-area {
+  display: flex;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.user-area .sidebar {
+  width: 245px;
+  min-width: 245px;
+  min-height: 100vh;
+  background: #1c1917;
+  padding: 20px;
+  flex-shrink: 0;
+}
+
+.user-area .main {
+  flex: 1;
+  min-width: 0;
+  padding: 30px;
+}
+.form-group {
+  width: 320px;
+}

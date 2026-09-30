@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Personal Expense Tracker" />
+    <title>Admin Login | ExpenseTrack</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/admin.css" />
+  </head>
+  <body class="admin-area">
+    <main class="auth-page">
+      <div class="auth-box">
+        <a class="brand" href="/"
+          ><span class="brand-mark">₹</span> ExpenseTracker</a
+        >
+        <h1>Admin Login</h1>
+        <p class="muted" style="text-align: center">
+          Authorized administrators only.
+        </p>
+        <div id="msg" hidden></div>
+        <form id="loginForm">
+          <div class="form-group">
+            <label>Email</label><input name="email" type="email" required />
+          </div>
+          <div class="form-group">
+            <label>Password</label
+            ><input name="password" type="password" required />
+          </div>
+          <button class="btn btn-primary" style="width: 100%">
+            Login as Admin
+          </button>
+        </form>
+        <p style="text-align: center">
+          <a href="/" style="color: #2563eb">Back to website</a>
+        </p>
+      </div>
+    </main>
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/auth.js"></script>
+  </body>
+</html>

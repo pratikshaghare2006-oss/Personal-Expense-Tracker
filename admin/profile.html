@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Personal Expense Tracker" />
+    <title>Admin Profile</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/admin.css" />
+  </head>
+  <body class="admin-area">
+    <aside class="sidebar admin-sidebar">
+      <a class="brand" href="/admin/dashboard.html" style="color: white"
+        ><span class="brand-mark">₹</span> ExpenseTrack</a
+      >
+      <h3>Admin Menu</h3>
+      <a class="side-link" href="/admin/dashboard.html">▦ Dashboard</a
+      ><a class="side-link" href="/admin/users.html">♙ Users</a
+      ><a class="side-link" href="/admin/transactions.html">↔ Transactions</a
+      ><a class="side-link" href="/admin/categories.html">▤ Categories</a
+      ><a class="side-link" href="/admin/reports.html">▥ Reports</a
+      ><a class="side-link" href="/admin/messages.html">✉ Messages</a
+      ><a class="side-link" href="/admin/profile.html">⚙ Profile</a
+      ><a
+        class="side-link"
+        href="#"
+        onclick="
+          logout();
+          return false;
+        "
+        >↪ Logout</a
+      >
+    </aside>
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <h1 class="admin-title">Admin Profile</h1>
+          <p class="muted">Administration panel</p>
+        </div>
+        <span class="user-badge">Admin</span>
+      </div>
+      <div class="card">
+        <h3>Logged in as administrator</h3>
+        <p class="muted">
+          Use the same profile endpoint to display the administrator name and
+          email.
+        </p>
+        <button class="btn btn-primary" onclick="logout()">Logout</button>
+      </div>
+    </main>
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/admin.js"></script>
+  </body>
+</html>
